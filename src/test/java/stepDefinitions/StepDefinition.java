@@ -16,22 +16,20 @@ import io.restassured.specification.ResponseSpecification;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 import resources.TestDataBuild;
+import resources.Utils;
+
 import static io.restassured.RestAssured.given;
 
 @RunWith(Cucumber.class)
-public class StepDefinition {
+public class StepDefinition extends Utils {
     RequestSpecification res;
     ResponseSpecification responseSpecification;
     Response response;
     TestDataBuild data = new TestDataBuild();
     @Given("^Add place payload$")
     public void add_place_payload() throws Throwable {
-        RestAssured.baseURI = "https://rahulshettyacademy.com";
-        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com")
-                .addQueryParam("key","qalick123")
-                .setContentType(ContentType.JSON).build();
         responseSpecification =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-        res = given().spec(req)
+        res = given().spec(requestSpecification())
                 .body(data.addPlacePayload());
     }
     @When("^user calls \"([^\"]*)\" with Post http request$")
