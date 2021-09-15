@@ -2,7 +2,6 @@ package resources;
 
 import pojo.AddPlace;
 import pojo.Location;
-
 import java.util.ArrayList;
 import java.util.List;
 
