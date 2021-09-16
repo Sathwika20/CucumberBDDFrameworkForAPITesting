@@ -1,8 +1,8 @@
 Request method:	POST
-Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qalick123
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
 Proxy:			<none>
 Request params:	<none>
-Query params:	key=qalick123
+Query params:	key=qaclick123
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -27,25 +27,68 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Thu, 16 Sep 2021 10:34:52 GMT
+Date: Thu, 16 Sep 2021 12:07:31 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 137
+Content-Length: 194
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
-Content-Type: application/json; charset=UTF-8
+Content-Type: application/json;charset=UTF-8
 
-<br />
-<b>Notice</b>:  Undefined property: stdClass::$place_id in <b>/var/www/maps/api/place/DeletePlace.php</b> on line <b>42</b><br />
-
+{
+    "status": "OK",
+    "place_id": "f7e5c5fa58fa4f2581ee6f314f9d0514",
+    "scope": "APP",
+    "reference": "14ad938ee56082a4236bb3e8038caa2914ad938ee56082a4236bb3e8038caa29",
+    "id": "14ad938ee56082a4236bb3e8038caa29"
+}
 Request method:	POST
-Request URI:	https://rahulshettyacademy.com/maps/api/place/delete/json?key=qalick123
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=f7e5c5fa58fa4f2581ee6f314f9d0514
 Proxy:			<none>
 Request params:	<none>
-Query params:	key=qalick123
+Query params:	key=qaclick123
+				place_id=f7e5c5fa58fa4f2581ee6f314f9d0514
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Thu, 16 Sep 2021 12:07:32 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 253
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "50",
+    "name": "AAhouse",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "world cross centre",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "English"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123&place_id=f7e5c5fa58fa4f2581ee6f314f9d0514
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=f7e5c5fa58fa4f2581ee6f314f9d0514
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -70,17 +113,59 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Thu, 16 Sep 2021 10:34:54 GMT
+Date: Thu, 16 Sep 2021 12:07:34 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 137
+Content-Length: 194
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
-Content-Type: application/json; charset=UTF-8
+Content-Type: application/json;charset=UTF-8
 
-<br />
-<b>Notice</b>:  Undefined property: stdClass::$place_id in <b>/var/www/maps/api/place/DeletePlace.php</b> on line <b>42</b><br />
+{
+    "status": "OK",
+    "place_id": "9d9d2987038c5979a30f04175cf1b153",
+    "scope": "APP",
+    "reference": "d91304966e818e222f9523669c3adf10d91304966e818e222f9523669c3adf10",
+    "id": "d91304966e818e222f9523669c3adf10"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=f7e5c5fa58fa4f2581ee6f314f9d0514&place_id=9d9d2987038c5979a30f04175cf1b153
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qaclick123
+				place_id=[f7e5c5fa58fa4f2581ee6f314f9d0514, 9d9d2987038c5979a30f04175cf1b153]
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Thu, 16 Sep 2021 12:07:34 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 252
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
 
+{
+    "location": {
+        "latitude": "-38.383494",
+        "longitude": "33.427362"
+    },
+    "accuracy": "50",
+    "name": "BBhouse",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "sea crosee centre",
+    "types": "shoe park,shop",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Spanish"
+}

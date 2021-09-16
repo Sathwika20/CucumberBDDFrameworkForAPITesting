@@ -5,11 +5,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.junit.Cucumber;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
@@ -49,8 +46,26 @@ public class StepDefinition extends Utils {
     }
     @And("^\"([^\"]*)\" in response body is \"([^\"]*)\"$")
     public void something_in_response_body_is_something(String keyValue, String ExpectedValue) throws Throwable {
-        String resp = response.asString();
-        JsonPath js = new JsonPath(resp);
-        Assert.assertEquals(js.get(keyValue).toString(),ExpectedValue);
+        Assert.assertEquals(getJsonPath(response,keyValue),ExpectedValue);
     }
+//    @And("^verify place_id created maps to \"([^\"]*)\" using \"([^\"]*)\"$")
+//    public void verify_place_id_created_maps_to_something_using_something(String expectedName, String resource) throws Throwable {
+//        //request spec
+//       String place_id = getJsonPath(response,"place_id");
+//        res.given().spec(requestSpecification()
+//                .queryParam("place_id",place_id));
+//        user_calls_something_with_something_http_request(resource,"GET");
+//        String actualName = getJsonPath(response, "name");
+//        Assert.assertEquals(actualName, expectedName);
+//    }
+     @Then("verify place_id created maps to {string} using {string}")
+     public void verify_place_id_created_maps_to_using(String expectedName, String resource) throws Throwable {
+//         request spec
+       String place_id = getJsonPath(response,"place_id");
+        res.given().spec(requestSpecification()
+                .queryParam("place_id",place_id));
+        user_calls_something_with_something_http_request(resource,"GET");
+        String actualName = getJsonPath(response, "name");
+        Assert.assertEquals(actualName, expectedName);
+     }
 }
