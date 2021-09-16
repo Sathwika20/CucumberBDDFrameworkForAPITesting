@@ -17,3 +17,8 @@ Feature: Validating Place API's
          | BBhouse | Spanish  | sea crosee centre |
 
 
+   Scenario: Verify if Delete place functionality is working
+      Given DeletePlace Payload
+      When user calls "deletePlaceAPI" with "POST" http request
+      Then the API call got success with status code 200
+      And "status" in response body is "OK"
