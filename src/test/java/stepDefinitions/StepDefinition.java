@@ -34,9 +34,9 @@ public class StepDefinition extends Utils {
     }
     @When("^user calls \"([^\"]*)\" with Post http request$")
     public void user_calls_something_with_post_http_request(String strArg1) throws Throwable {
-        response = res.when().log().all()
+        response = res.when()
                 .post("/maps/api/place/add/json")
-                .then().log().all().spec(responseSpecification).extract().response();
+                .then().spec(responseSpecification).extract().response();
     }
     @Then("^the API call is success with the status code 200$")
     public void the_api_call_is_success_with_the_status_code_200() throws Throwable {
