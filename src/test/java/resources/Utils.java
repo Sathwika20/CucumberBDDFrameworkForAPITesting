@@ -10,15 +10,19 @@ import java.io.*;
 import java.util.Properties;
 
 public class Utils {
-    RequestSpecification req;
+    public static RequestSpecification req;
     public RequestSpecification requestSpecification() throws IOException {
-        PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
-        req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseURL"))
-                .addQueryParam("key","qalick123")
-                .addFilter(RequestLoggingFilter.logRequestTo(log))
-                .addFilter(ResponseLoggingFilter.logResponseTo(log))
-                .setContentType(ContentType.JSON).build();
-        return req;
+        if(req == null) {
+            PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
+            req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseURL"))
+                    .addQueryParam("key", "qalick123")
+                    .addFilter(RequestLoggingFilter.logRequestTo(log))
+                    .addFilter(ResponseLoggingFilter.logResponseTo(log))
+                    .setContentType(ContentType.JSON).build();
+            return req;
+        } else {
+            return req;
+        }
     }
     public String getGlobalValue(String key) throws IOException {
         Properties properties = new Properties();

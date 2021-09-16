@@ -11,7 +11,8 @@ Feature: Validating Place API's
 
 
       Examples:
-         | name    | language | address            |
+         | name    | language |     address       |
          | AAhouse | English  | world cross centre|
+         | BBhouse | Spanish  | sea crosee centre |
 
 

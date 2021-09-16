@@ -27,7 +27,7 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Thu, 16 Sep 2021 08:28:34 GMT
+Date: Thu, 16 Sep 2021 09:23:48 GMT
 Server: Apache/2.4.18 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,8 +40,55 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "d23ba9e21497bcfd5149b0db032fb88b",
+    "place_id": "96989deb3bbd1997ac6ddd9b6c4bcc74",
     "scope": "APP",
-    "reference": "976a87cb6ced4cd6ae03b04eb1f5347e976a87cb6ced4cd6ae03b04eb1f5347e",
-    "id": "976a87cb6ced4cd6ae03b04eb1f5347e"
+    "reference": "33a2d2a610732da6fe7254cceee0201933a2d2a610732da6fe7254cceee02019",
+    "id": "33a2d2a610732da6fe7254cceee02019"
+}
+Request method:	POST
+Request URI:	https://rahulshettyacademy.com/maps/api/place/add/json?key=qalick123
+Proxy:			<none>
+Request params:	<none>
+Query params:	key=qalick123
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "accuracy": 50,
+    "name": "BBhouse",
+    "phone_number": "(+91) 983 893 3937",
+    "address": "sea crosee centre",
+    "website": "https://rahulshettyacademy.com",
+    "language": "Spanish",
+    "location": {
+        "lat": -38.383494,
+        "lng": 33.427362
+    },
+    "types": [
+        "shoe park",
+        "shop"
+    ]
+}
+HTTP/1.1 200 OK
+Date: Thu, 16 Sep 2021 09:23:49 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: POST
+Access-Control-Max-Age: 3600
+Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
+Content-Length: 194
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+
+{
+    "status": "OK",
+    "place_id": "eb33fc6850442d168f917bdf44fce01f",
+    "scope": "APP",
+    "reference": "b5235ed9728aae7ba08b29016921df61b5235ed9728aae7ba08b29016921df61",
+    "id": "b5235ed9728aae7ba08b29016921df61"
 }
