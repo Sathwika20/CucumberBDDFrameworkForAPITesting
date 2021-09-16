@@ -15,6 +15,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
+import resources.ApiResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -28,16 +29,19 @@ public class StepDefinition extends Utils {
     TestDataBuild data = new TestDataBuild();
     @Given("^Add place payload with \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
     public void add_place_payload_with_something_something_something(String name, String language, String address) throws Throwable {
-        responseSpecification =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         res = given().spec(requestSpecification())
                 .body(data.addPlacePayload(name,language,address));
     }
-    @When("^user calls \"([^\"]*)\" with Post http request$")
-    public void user_calls_something_with_post_http_request(String strArg1) throws Throwable {
-        response = res.when()
-                .post("/maps/api/place/add/json")
-                .then().spec(responseSpecification).extract().response();
-        System.out.println(strArg1);
+    @When("^user calls \"([^\"]*)\" with \"([^\"]*)\" http request$")
+    public void user_calls_something_with_something_http_request(String resource, String method)throws Throwable {
+        ApiResources resourceApi = ApiResources.valueOf(resource);
+        System.out.println(resourceApi.getResource());
+        responseSpecification =new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+        if(method.equalsIgnoreCase("POST")){
+            response = res.when().post(resourceApi.getResource());
+        }else if(method.equalsIgnoreCase("GET")) {
+            response = res.when().post(resourceApi.getResource());
+        }
     }
     @Then("^the API call is success with the status code 200$")
     public void the_api_call_is_success_with_the_status_code_200() throws Throwable {
