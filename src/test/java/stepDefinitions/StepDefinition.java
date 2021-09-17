@@ -29,13 +29,13 @@ public class StepDefinition extends Utils {
     TestDataBuild data = new TestDataBuild();
 
     @Given("^Add place payload with \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\"$")
-    public void add_place_payload_with_something_something_something(String name, String language, String address) throws Throwable {
+    public void add_place_payload_with_name_language_address(String name, String language, String address) throws Throwable {
         res = given().spec(requestSpecification())
                 .body(data.addPlacePayload(name, language, address));
     }
 
     @When("^user calls \"([^\"]*)\" with \"([^\"]*)\" http request$")
-    public void user_calls_something_with_something_http_request(String resource, String method) throws Throwable {
+    public void user_calls_resource_with_method_http_request(String resource, String method) throws Throwable {
         ApiResources resourceApi = ApiResources.valueOf(resource);
         System.out.println(resourceApi.getResource());
         responseSpecification = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
@@ -52,7 +52,7 @@ public class StepDefinition extends Utils {
     }
 
     @And("^\"([^\"]*)\" in response body is \"([^\"]*)\"$")
-    public void something_in_response_body_is_something(String keyValue, String ExpectedValue) throws Throwable {
+    public void keyValue_in_response_body_is_ExpectedValue(String keyValue, String ExpectedValue) throws Throwable {
         Assert.assertEquals(getJsonPath(response, keyValue), ExpectedValue);
     }
 
@@ -62,7 +62,7 @@ public class StepDefinition extends Utils {
         place_id = getJsonPath(response, "place_id");
         res.given().spec(requestSpecification()
                 .queryParam("place_id", place_id));
-        user_calls_something_with_something_http_request(resource, "GET");
+        user_calls_resource_with_method_http_request(resource, "GET");
         String actualName = getJsonPath(response, "name");
         Assert.assertEquals(actualName, expectedName);
     }
